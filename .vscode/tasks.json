@@ -1,0 +1,38 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "Build core_engine",
+            "command": "C:/msys64/ucrt64/bin/gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-std=c17",
+                "-g",
+                "-Wall",
+                "-Wextra",
+                "-I${workspaceFolder}\\core_engine\\include",
+                "-IC:/msys64/ucrt64/include/ncurses",
+                "${workspaceFolder}\\core_engine\\src\\main.c",
+                "${workspaceFolder}\\core_engine\\src\\engine.c",
+                "${workspaceFolder}\\core_engine\\src\\canvas.c",
+                "${workspaceFolder}\\core_engine\\src\\shapes.c",
+                "-LC:/msys64/ucrt64/lib",
+                "-lncursesw",
+                "-o",
+                "${workspaceFolder}\\core_engine\\app.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds the full core engine with ncurses."
+        }
+    ],
+    "version": "2.0.0"
+}
