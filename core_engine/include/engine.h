@@ -12,7 +12,7 @@ typedef struct{
 void engine_init(Engine* engine);
 void engine_add_shape(Engine* engine, Shape* shape);
 void engine_delete_shape(Engine* engine, int id);
-void engine_get_shape(Engine* engine, int id);
+Shape* engine_get_shape(Engine* engine, int id);
 void engine_render(Engine* engine, char** canvas);
 void engine_cleanup(Engine* engine);
 

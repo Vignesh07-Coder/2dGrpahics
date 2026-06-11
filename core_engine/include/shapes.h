@@ -45,7 +45,7 @@ typedef struct{
 //Allocate the Shape, the specific data, and wireuo the functions
 Shape* create_circle(int id, int x, int y, int radius);
 Shape* create_rectangle(int id, int x, int y, int w, int h);
-Shape* create_line(int id, int x1, int x2, int y1, int y2);
+Shape* create_line(int id, int x1, int y1, int x2, int y2);
 Shape* create_triangle(int id, int x1, int y1, int x2, int y2, int x3, int y3);
 
 #endif

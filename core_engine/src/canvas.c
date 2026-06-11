@@ -3,12 +3,18 @@
 #include "../include/canvas.h"
 
 char** canvas_create(){
-    char** canvas = (char*)malloc(CANVAS_HEIGHT * sizeof(char*));
+    char** canvas = malloc(CANVAS_HEIGHT * sizeof(*canvas));
     if(!canvas) return NULL;
 
     for(int i = 0; i< CANVAS_HEIGHT; i++){
-        canvas[i] = (char*)malloc(CANVAS_HEIGHT * sizeof(char));
-        if(!canvas[i]) return NULL;
+        canvas[i] = malloc(CANVAS_WIDTH * sizeof(*canvas[i]));
+        if(!canvas[i]){
+            for(int j = 0; j < i; j++){
+                free(canvas[j]);
+            }
+            free(canvas);
+            return NULL;
+        }
     }
     return canvas;
 }
